@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Software Engineer | Manidu Deshapriya</title>
+
+    <!-- Meta tags for CV & Professional Sharing -->
+    <meta name="description"
+        content="Software Engineering portfolio of Manidu Deshapriya. Final-year undergraduate at Cardiff Metropolitan University (ICBT) with 5+ years of freelance experience building web applications, websites, software tools, and databases.">
+    <meta name="author" content="Manidu Deshapriya">
+    <meta property="og:title" content="Software Engineer | Manidu Deshapriya">
+    <meta property="og:description"
+        content="Building practical digital solutions, web applications, and database-driven software with modern technologies.">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            cyan: '#00f2ff',
+                            blue: '#0284c7',
+                            dark: '#030712',
+                            slate: '#080e1e',
+                            card: '#0b1329'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --accent-cyan: #00f2ff;
+            --accent-blue: #0284c7;
+            --bg-dark: #030712;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Technical Grid Background */
+        .cyber-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(0, 242, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 242, 255, 0.025) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .dot-radial-overlay {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 50% 20%, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Panels */
+        .glass-card {
+            background: rgba(11, 19, 41, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 242, 255, 0.12);
+        }
+
+        .glass-card-subtle {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Project Card Hover */
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 242, 255, 0.45);
+            box-shadow: 0 15px 35px -10px rgba(0, 242, 255, 0.18);
+        }
+
+        /* Tech Box Hover */
+        .tech-box {
+            transition: all 0.3s ease;
+        }
+
+        .tech-box:hover {
+            transform: translateY(-3px);
+            border-color: rgba(0, 242, 255, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(0, 242, 255, 0.15);
+        }
+
+        /* Glow Text */
+        .text-glow-cyan {
+            text-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen relative flex flex-col justify-between">
+
+    <div class="cyber-grid"></div>
+    <div class="dot-radial-overlay"></div>
+
+    <!-- ======================================================== -->
+    <!-- NAVIGATION BAR (Fixed Glassmorphic Header)               -->
+    <!-- ======================================================== -->
+    <header class="fixed top-3 left-0 right-0 z-50 px-4 sm:px-8">
+        <div
+            class="max-w-7xl mx-auto glass-card px-4 sm:px-6 py-3 rounded-2xl flex items-center justify-between shadow-2xl border border-cyan-500/20">
+
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3">
+                <a href="../index.html" class="flex items-center gap-2.5 group">
+                    <div
+                        class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 to-sky-600 p-[1.5px] shadow-lg shadow-cyan-500/20">
+                        <div
+                            class="w-full h-full bg-[#070d1d] rounded-[10px] flex items-center justify-center font-mono font-bold text-xs text-cyan-400">
+                            MD
+                        </div>
+                    </div>
+                    <div>
+                        <span
+                            class="font-bold text-sm text-white tracking-tight group-hover:text-cyan-400 transition-colors">
+                            MANIDU.DEV
+                        </span>
+                        <span
+                            class="text-[9px] font-mono text-cyan-400/80 block uppercase tracking-widest hidden sm:block">
+                            Software Engineer
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Nav Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-6 font-sans text-xs font-semibold text-slate-300">
+                <a href="#overview" class="hover:text-cyan-400 transition-colors">Overview</a>
+                <a href="#about" class="hover:text-cyan-400 transition-colors">Profile</a>
+                <a href="#tech" class="hover:text-cyan-400 transition-colors">Tech Stack</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Actions & Socials -->
+            <div class="flex items-center gap-2 sm:gap-2.5">
+                <!-- Back to Main Gate -->
+                <a href="../index.html"
+                    class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-white/10 hover:border-cyan-400/50 text-xs font-sans font-medium text-slate-300 hover:text-cyan-400 transition-all flex items-center gap-1.5"
+                    title="Return to Main Portal">
+                    <i class="fas fa-arrow-left text-[11px] text-cyan-400"></i>
+                    <span class="hidden sm:inline">Main Portal</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/Manidu-Deshapriya" target="_blank" rel="noopener noreferrer"
+                    class="w-8 h-8 rounded-xl bg-slate-800/60 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-all text-xs"
+                    title="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="http://www.linkedin.com/in/mcdeshapriya" target="_blank" rel="noopener noreferrer"
+                    class="w-8 h-8 rounded-xl bg-slate-800/60 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#0077b5] hover:border-[#0077b5]/60 transition-all text-xs"
+                    title="LinkedIn Profile">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <!-- Connect Button -->
+                <a href="mailto:maniduchathuranga@gmail.com"
+                    class="px-3.5 py-1.5 rounded-xl bg-cyan-500/20 border border-cyan-400/50 hover:bg-cyan-400 hover:text-black text-xs font-sans font-bold text-cyan-300 transition-all flex items-center gap-1.5 shadow-lg shadow-cyan-950/40">
+                    <i class="fas fa-paper-plane text-[10px]"></i>
+                    <span>Connect</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ======================================================== -->
+    <!-- HERO SECTION: DEVELOPER PROFILE & CORE MISSION           -->
+    <!-- ======================================================== -->
+    <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-8 pt-28 sm:pt-36 pb-16">
+
+        <section id="overview" class="text-center max-w-4xl mx-auto mb-20 sm:mb-28">
+
+            <!-- Status Badge -->
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-sans text-slate-300 shadow-lg shadow-cyan-950/50 mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-cyan-300 font-semibold tracking-wide">Final-Year Software Engineer</span>
+                <span class="text-slate-500">&bull;</span>
+                <span class="text-purple-300 font-semibold tracking-wide flex items-center gap-1.5"><i
+                        class="fas fa-brain text-xs text-purple-400"></i> AI Enthusiast</span>
+                <span class="text-slate-500">|</span>
+                <span class="text-slate-300">Ready for High-Impact Roles</span>
+            </div>
+
+            <h1
+                class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight uppercase leading-tight mb-6">
+                Engineering <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">Practical</span>
+                Digital Solutions
+            </h1>
+
+            <p class="text-sm sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto mb-8 font-sans">
+                Passionate about software engineering, scalable web architectures, and leveraging cutting-edge <strong
+                    class="text-cyan-300 font-semibold">AI models & developer tools</strong> for rapid learning,
+                automated workflows, and building practical digital solutions. Bridging academic software rigor with 5+
+                years of international freelance experience.
+            </p>
+
+            <!-- Hero Action Buttons (Clean Visual Hierarchy: Primary Solid, Secondary Outlines) -->
+            <div class="flex flex-wrap items-center justify-center gap-3.5 font-sans text-xs font-semibold">
+                <!-- Primary Solid CTA -->
+                <a href="#contact"
+                    class="px-6 py-3.5 rounded-2xl bg-cyan-400 text-slate-950 font-bold hover:bg-cyan-300 transition-all shadow-lg shadow-cyan-400/20 flex items-center gap-2">
+                    <i class="fas fa-paper-plane text-xs"></i>
+                    <span>Get In Touch</span>
+                </a>
+                <!-- Secondary Outline CTA -->
+                <a href="#projects"
+                    class="px-6 py-3.5 rounded-2xl bg-slate-900/80 border border-white/15 hover:border-cyan-400/80 text-slate-100 hover:text-cyan-300 transition-all flex items-center gap-2 shadow-sm">
+                    <i class="fas fa-code-fork text-xs text-cyan-400"></i>
+                    <span>Explore Projects (9)</span>
+                </a>
+                <!-- Tertiary Outline CTA -->
+                <a href="https://github.com/Manidu-Deshapriya" target="_blank" rel="noopener noreferrer"
+                    class="px-6 py-3.5 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-slate-500 text-slate-300 hover:text-white transition-all flex items-center gap-2">
+                    <i class="fab fa-github text-sm text-slate-400"></i>
+                    <span>GitHub Profile</span>
+                </a>
+            </div>
+
+            <!-- Quick Metrics Grid (Expanded Spacing & Wide Layout) -->
+            <div
+                class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-16 sm:mt-20 max-w-4xl mx-auto text-left font-sans">
+                <div
+                    class="glass-card-subtle p-5 rounded-2xl border border-white/10 hover:border-cyan-400/30 transition-all">
+                    <div class="flex items-center gap-2 text-cyan-400 text-xs font-mono mb-1">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Academics</span>
+                    </div>
+                    <span class="block text-base sm:text-lg font-bold text-white leading-tight">Final-Year</span>
+                    <span class="text-[11px] text-cyan-400/90 font-mono">Software Engineering</span>
+                </div>
+                <div
+                    class="glass-card-subtle p-5 rounded-2xl border border-white/10 hover:border-cyan-400/30 transition-all">
+                    <div class="flex items-center gap-2 text-sky-400 text-xs font-mono mb-1">
+                        <i class="fas fa-code-branch"></i>
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Repositories</span>
+                    </div>
+                    <span class="block text-2xl sm:text-3xl font-extrabold text-white">9+</span>
+                    <span class="text-[11px] text-slate-400 font-mono">Engineered Systems</span>
+                </div>
+                <div
+                    class="glass-card-subtle p-5 rounded-2xl border border-white/10 hover:border-cyan-400/30 transition-all">
+                    <div class="flex items-center gap-2 text-purple-400 text-xs font-mono mb-1">
+                        <i class="fas fa-briefcase"></i>
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Experience</span>
+                    </div>
+                    <span class="block text-2xl sm:text-3xl font-extrabold text-cyan-400">5+ Yrs</span>
+                    <span class="text-[11px] text-slate-400 font-mono">Freelance Track</span>
+                </div>
+                <div
+                    class="glass-card-subtle p-5 rounded-2xl border border-white/10 hover:border-cyan-400/30 transition-all">
+                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-mono mb-1">
+                        <i class="fas fa-layer-group"></i>
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Architecture</span>
+                    </div>
+                    <span class="block text-base sm:text-lg font-bold text-white leading-tight">Full-Stack</span>
+                    <span class="text-[11px] text-slate-400 font-mono">Web, Apps & DBs</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======================================================== -->
+        <!-- ACADEMIC & PROFESSIONAL PROFILE SECTION                  -->
+        <!-- ======================================================== -->
+        <section id="about" class="mb-24 scroll-mt-24">
+            <div
+                class="glass-card rounded-3xl p-6 sm:p-10 border border-cyan-500/20 relative overflow-hidden shadow-2xl">
+                <div
+                    class="absolute -right-20 -bottom-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
+                    <!-- Left Column: Rich Biography & Direct Links (Balanced Height) -->
+                    <div class="lg:col-span-5 flex flex-col justify-between">
+                        <div>
+                            <span
+                                class="text-[11px] font-semibold text-cyan-400 tracking-wider uppercase block mb-2 font-sans">
+                                Academic & Professional Profile
+                            </span>
+                            <h2
+                                class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase leading-tight mb-4">
+                                Who is <br><span class="text-cyan-400 text-glow-cyan">Manidu Deshapriya?</span>
+                            </h2>
+                            <div class="h-1.5 w-16 bg-cyan-400 rounded-full mb-6"></div>
+
+                            <p class="text-sm sm:text-base text-slate-200 leading-relaxed font-sans mb-4">
+                                Final-year Software Engineering undergraduate at <strong class="text-white">Cardiff
+                                    Metropolitan University</strong>, studying at <strong class="text-white">ICBT
+                                    Campus</strong> in Sri Lanka.
+                            </p>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans mb-5">
+                                Dedicated to building robust digital solutions, practical web applications, and database
+                                management
+                                architectures that solve real-world operational challenges.
+                            </p>
+
+                            <!-- Specialized Blend Callout -->
+                            <div class="p-4 rounded-2xl bg-cyan-950/40 border border-cyan-400/25 mb-6">
+                                <div
+                                    class="flex items-center gap-2 text-xs font-bold text-cyan-300 uppercase tracking-wider mb-1.5 font-sans">
+                                    <i class="fas fa-layer-group text-cyan-400"></i>
+                                    <span>Engineering + Creative Freelance</span>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                                    Over 5 years of active global freelance experience delivering web applications,
+                                    responsive websites, custom tools, and digital media for international clients with
+                                    verified client satisfaction.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Direct Action Buttons -->
+                        <div class="flex flex-wrap items-center gap-3 pt-2">
+                            <a href="mailto:maniduchathuranga@gmail.com"
+                                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-400 text-slate-950 text-xs font-sans font-bold hover:bg-cyan-300 transition-all shadow-md shadow-cyan-400/20 cursor-pointer">
+                                <i class="fas fa-paper-plane text-xs"></i>
+                                <span>Get in Touch Directly</span>
+                            </a>
+                            <a href="http://www.linkedin.com/in/mcdeshapriya" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 hover:border-[#0077b5] text-xs font-sans font-semibold text-slate-300 hover:text-white transition-all">
+                                <i class="fab fa-linkedin-in text-[#0077b5]"></i>
+                                <span>LinkedIn Profile</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: 4 Focused Highlights (Generous Padding & Beautiful Balanced Layout) -->
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans">
+
+                        <!-- Card 1: Education -->
+                        <div
+                            class="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-white/10 hover:border-cyan-400/40 transition-all flex flex-col justify-between shadow-lg">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-cyan-950/90 border border-cyan-400/30 flex items-center justify-center text-cyan-400 shadow-sm text-sm">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <span
+                                        class="text-[10px] font-mono text-cyan-400/90 bg-cyan-950/60 border border-cyan-400/25 px-2.5 py-0.5 rounded-full font-medium">Final-Year</span>
+                                </div>
+                                <h3 class="font-bold text-white text-base mb-2">Cardiff Metropolitan University</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    ICBT Campus Sri Lanka. Specializing in full-stack web architectures, object-oriented
+                                    systems, and software engineering principles.
+                                </p>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono text-cyan-400/90 mt-4 pt-3 border-t border-white/5 block">&bull;
+                                Final-Year Undergraduate</span>
+                        </div>
+
+                        <!-- Card 2: Tech Capabilities -->
+                        <div
+                            class="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-white/10 hover:border-sky-400/40 transition-all flex flex-col justify-between shadow-lg">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-sky-950/90 border border-sky-400/30 flex items-center justify-center text-sky-400 shadow-sm text-sm">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <span
+                                        class="text-[10px] font-mono text-sky-400/90 bg-sky-950/60 border border-sky-400/25 px-2.5 py-0.5 rounded-full font-medium">Full-Stack</span>
+                                </div>
+                                <h3 class="font-bold text-white text-base mb-2">Development & Databases</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Proven technical experience developing web applications using .NET, Java,
+                                    JavaScript, and PHP, with Firebase, PostgreSQL, and MySQL backends.
+                                </p>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono text-sky-400/90 mt-4 pt-3 border-t border-white/5 block">&bull;
+                                Full-Stack Web & APIs</span>
+                        </div>
+
+                        <!-- Card 3: 5+ Yrs Freelance -->
+                        <div
+                            class="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-white/10 hover:border-purple-400/40 transition-all flex flex-col justify-between shadow-lg">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-purple-950/90 border border-purple-400/30 flex items-center justify-center text-purple-400 shadow-sm text-sm">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <span
+                                        class="text-[10px] font-mono text-purple-400/90 bg-purple-950/60 border border-purple-400/25 px-2.5 py-0.5 rounded-full font-medium">Global
+                                        Work</span>
+                                </div>
+                                <h3 class="font-bold text-white text-base mb-2">5+ Yrs Global Freelance</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Engineered websites, web applications, custom software tools, and digital media for
+                                    international clients, honing clear communication and execution.
+                                </p>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono text-purple-400/90 mt-4 pt-3 border-t border-white/5 block">&bull;
+                                Multi-National Clients</span>
+                        </div>
+
+                        <!-- Card 4: AI & Continuous Adaptability -->
+                        <div
+                            class="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-white/10 hover:border-emerald-400/40 transition-all flex flex-col justify-between shadow-lg">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-emerald-950/90 border border-emerald-400/30 flex items-center justify-center text-emerald-400 shadow-sm text-sm">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <span
+                                        class="text-[10px] font-mono text-emerald-400/90 bg-emerald-950/60 border border-emerald-400/25 px-2.5 py-0.5 rounded-full font-medium">AI
+                                        Enthusiast</span>
+                                </div>
+                                <h3 class="font-bold text-white text-base mb-2">AI & Fast-Learning Velocity</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Enthusiastic about leveraging modern AI models, agentic workflows, and developer
+                                    tools. Fast-adapting to emerging frameworks, compressing learning curves, and
+                                    building smarter systems.
+                                </p>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono text-emerald-400/90 mt-4 pt-3 border-t border-white/5 block">&bull;
+                                Rapid AI Adaptability & Execution</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======================================================== -->
+        <!-- TECH STACK: 6 ORGANIZED CATEGORIES                       -->
+        <!-- ======================================================== -->
+        <section id="tech" class="mb-24 scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-8">
+                <div>
+                    <span class="text-[11px] font-semibold text-cyan-400 tracking-wider uppercase block mb-1">
+                        Technical Competencies
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight uppercase">
+                        Technology <span class="text-cyan-400 text-glow-cyan">Stack</span> & Frameworks
+                    </h2>
+                </div>
+                <p class="text-xs text-slate-400 max-w-md font-sans">
+                    Structured across core development layers, database management, cloud workflows, and system
+                    administration.
+                </p>
+            </div>
+
+            <!-- 6 Categorized Tech Cards Grid (Equal Heights & Vibrant Official Brand Icons) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+
+                <!-- 1. Programming Languages -->
+                <div
+                    class="glass-card rounded-2xl p-6 border border-white/10 hover:border-cyan-400/50 transition-all h-full flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-cyan-950/80 border border-cyan-400/30 flex items-center justify-center text-cyan-400 text-base shadow-sm">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm text-white">Programming Languages</h3>
+                                    <span class="text-[10px] text-slate-400 font-mono block">Syntax & Core Logic</span>
+                                </div>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono font-bold text-cyan-300 bg-cyan-950/70 border border-cyan-400/30 px-2.5 py-0.5 rounded-full">8
+                                Languages</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-cyan-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-microsoft text-[#00a4ef]"></i>
+                                <span class="font-medium">C# / .NET</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-cyan-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-java text-[#f89820]"></i>
+                                <span class="font-medium">Java</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-cyan-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-python text-[#3776ab]"></i>
+                                <span class="font-medium">Python</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-cyan-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-js text-[#f7df1e]"></i>
+                                <span class="font-medium">JavaScript (ES6+)</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-cyan-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-php text-[#777bb4]"></i>
+                                <span class="font-medium">PHP</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-cyan-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-code text-[#00599c]"></i>
+                                <span class="font-medium">C / C++</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-cyan-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-html5 text-[#e34f26]"></i>
+                                <span class="font-medium">HTML5</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-cyan-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-css3-alt text-[#1572b6]"></i>
+                                <span class="font-medium">CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="pt-4 mt-6 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                        <span class="flex items-center gap-1.5 text-cyan-400"><i
+                                class="fas fa-circle-check text-[10px]"></i> Object-Oriented & Scripting</span>
+                        <span class="text-slate-500">Tier 1</span>
+                    </div>
+                </div>
+
+                <!-- 2. Frameworks & Libraries -->
+                <div
+                    class="glass-card rounded-2xl p-6 border border-white/10 hover:border-sky-400/50 transition-all h-full flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-sky-950/80 border border-sky-400/30 flex items-center justify-center text-sky-400 text-base shadow-sm">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm text-white">Frameworks & Libraries</h3>
+                                    <span class="text-[10px] text-slate-400 font-mono block">UI & Web
+                                        Architecture</span>
+                                </div>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono font-bold text-sky-300 bg-sky-950/70 border border-sky-400/30 px-2.5 py-0.5 rounded-full">6
+                                Frameworks</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-sky-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-react text-[#61dafb]"></i>
+                                <span class="font-medium">React.js</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-sky-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-react text-[#61dafb]"></i>
+                                <span class="font-medium">React Native</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-sky-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-microsoft text-[#512bd4]"></i>
+                                <span class="font-medium">Blazor WebAssembly</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-sky-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-wind text-[#38bdf8]"></i>
+                                <span class="font-medium">Tailwind CSS</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-sky-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-bootstrap text-[#7952b3]"></i>
+                                <span class="font-medium">Bootstrap 5</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-sky-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-node-js text-[#68a063]"></i>
+                                <span class="font-medium">Node.js Runtime</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="pt-4 mt-6 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                        <span class="flex items-center gap-1.5 text-sky-400"><i
+                                class="fas fa-circle-check text-[10px]"></i> Modern Component Architecture</span>
+                        <span class="text-slate-500">Tier 1</span>
+                    </div>
+                </div>
+
+                <!-- 3. Databases -->
+                <div
+                    class="glass-card rounded-2xl p-6 border border-white/10 hover:border-emerald-400/50 transition-all h-full flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-emerald-950/80 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-base shadow-sm">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm text-white">Databases & Storage</h3>
+                                    <span class="text-[10px] text-slate-400 font-mono block">Relational & NoSQL
+                                        Systems</span>
+                                </div>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono font-bold text-emerald-300 bg-emerald-950/70 border border-emerald-400/30 px-2.5 py-0.5 rounded-full">5
+                                Systems</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-emerald-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-database text-[#336791]"></i>
+                                <span class="font-medium">PostgreSQL</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-emerald-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-server text-[#00758f]"></i>
+                                <span class="font-medium">MySQL</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-emerald-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-leaf text-[#47a248]"></i>
+                                <span class="font-medium">MongoDB</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-emerald-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-fire text-[#ffca28]"></i>
+                                <span class="font-medium">Firebase Firestore</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-emerald-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-bolt text-[#3ecf8e]"></i>
+                                <span class="font-medium">Supabase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="pt-4 mt-6 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                        <span class="flex items-center gap-1.5 text-emerald-400"><i
+                                class="fas fa-circle-check text-[10px]"></i> ACID Compliant & Realtime</span>
+                        <span class="text-slate-500">Tier 1</span>
+                    </div>
+                </div>
+
+                <!-- 4. Tools -->
+                <div
+                    class="glass-card rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 transition-all h-full flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-purple-950/80 border border-purple-400/30 flex items-center justify-center text-purple-400 text-base shadow-sm">
+                                    <i class="fas fa-screwdriver-wrench"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm text-white">Engineering & AI Tools</h3>
+                                    <span class="text-[10px] text-slate-400 font-mono block">IDE, AI Workflows &
+                                        Testing</span>
+                                </div>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono font-bold text-purple-300 bg-purple-950/70 border border-purple-400/30 px-2.5 py-0.5 rounded-full">8
+                                Tools & AI</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-purple-400/40 text-purple-300 hover:border-purple-400 hover:bg-slate-800 hover:-translate-y-0.5 text-xs transition-all shadow-sm font-semibold">
+                                <i class="fas fa-brain text-purple-400"></i>
+                                <span>AI Models & Tools</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-cyan-400/30 text-cyan-300 hover:border-cyan-400 hover:bg-slate-800 hover:-translate-y-0.5 text-xs transition-all shadow-sm">
+                                <i class="fas fa-wand-magic-sparkles text-cyan-400"></i>
+                                <span>Prompt Engineering</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-purple-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-git-alt text-[#f05032]"></i>
+                                <span class="font-medium">Git VCS</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-purple-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-github text-white"></i>
+                                <span class="font-medium">GitHub Repos</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-purple-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-code text-[#007acc]"></i>
+                                <span class="font-medium">VS Code</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-purple-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-paper-plane text-[#ff6c37]"></i>
+                                <span class="font-medium">Postman API</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-purple-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-figma text-[#f24e1e]"></i>
+                                <span class="font-medium">Figma UI/UX</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-purple-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-npm text-[#cb3837]"></i>
+                                <span class="font-medium">npm / Package Mgr</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="pt-4 mt-6 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                        <span class="flex items-center gap-1.5 text-purple-400"><i
+                                class="fas fa-circle-check text-[10px]"></i> Professional Dev Workflows</span>
+                        <span class="text-slate-500">Tier 1</span>
+                    </div>
+                </div>
+
+                <!-- 5. Cloud & DevOps -->
+                <div
+                    class="glass-card rounded-2xl p-6 border border-white/10 hover:border-blue-400/50 transition-all h-full flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-blue-950/80 border border-blue-400/30 flex items-center justify-center text-blue-400 text-base shadow-sm">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm text-white">Cloud & DevOps</h3>
+                                    <span class="text-[10px] text-slate-400 font-mono block">Infrastructure &
+                                        Deployment</span>
+                                </div>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono font-bold text-blue-300 bg-blue-950/70 border border-blue-400/30 px-2.5 py-0.5 rounded-full">5
+                                Platforms</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-blue-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-aws text-[#ff9900]"></i>
+                                <span class="font-medium">AWS Cloud</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-blue-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-docker text-[#2496ed]"></i>
+                                <span class="font-medium">Docker Containers</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-blue-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-infinity text-cyan-400"></i>
+                                <span class="font-medium">CI/CD Automation</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-blue-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-network-wired text-[#38bdf8]"></i>
+                                <span class="font-medium">RESTful APIs</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-blue-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-shield-halved text-[#10b981]"></i>
+                                <span class="font-medium">API Security / Auth</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="pt-4 mt-6 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                        <span class="flex items-center gap-1.5 text-blue-400"><i
+                                class="fas fa-circle-check text-[10px]"></i> Scalable & Automated</span>
+                        <span class="text-slate-500">Tier 1</span>
+                    </div>
+                </div>
+
+                <!-- 6. Operating Systems -->
+                <div
+                    class="glass-card rounded-2xl p-6 border border-white/10 hover:border-amber-400/50 transition-all h-full flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-amber-950/80 border border-amber-400/30 flex items-center justify-center text-amber-400 text-base shadow-sm">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm text-white">Operating Systems</h3>
+                                    <span class="text-[10px] text-slate-400 font-mono block">Runtime & System
+                                        Environments</span>
+                                </div>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono font-bold text-amber-300 bg-amber-950/70 border border-amber-400/30 px-2.5 py-0.5 rounded-full">4
+                                Environments</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-amber-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-ubuntu text-[#e95420]"></i>
+                                <span class="font-medium">Ubuntu / Linux</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-amber-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fab fa-windows text-[#0078d4]"></i>
+                                <span class="font-medium">Windows 11 / Server</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-amber-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-terminal text-[#4ade80]"></i>
+                                <span class="font-medium">Bash & Linux CLI</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-amber-400/50 hover:bg-slate-800 hover:-translate-y-0.5 text-xs text-slate-200 transition-all shadow-sm">
+                                <i class="fas fa-network-wired text-cyan-400"></i>
+                                <span class="font-medium">Network Protocols</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="pt-4 mt-6 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                        <span class="flex items-center gap-1.5 text-amber-400"><i
+                                class="fas fa-circle-check text-[10px]"></i> Server Administration & Shell</span>
+                        <span class="text-slate-500">Tier 1</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ======================================================== -->
+        <!-- PROJECTS SECTION (9 REAL PROJECTS WITH FILTERS)          -->
+        <!-- ======================================================== -->
+        <section id="projects" class="mb-24 scroll-mt-24">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+                <div>
+                    <span class="text-[11px] font-semibold text-cyan-400 tracking-wider uppercase block mb-1 font-sans">
+                        Portfolio & Repositories
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight uppercase">
+                        Engineered <span class="text-cyan-400 text-glow-cyan">Projects</span>
+                    </h2>
+                </div>
+
+                <!-- Filter Pills -->
+                <div
+                    class="flex flex-wrap items-center gap-1.5 p-1 bg-slate-900/90 rounded-2xl border border-white/10 font-sans text-xs font-semibold">
+                    <button onclick="filterProjects('all')"
+                        class="filter-btn active px-3 py-1.5 rounded-xl bg-cyan-400 text-slate-950 font-bold transition-all">
+                        All (9)
+                    </button>
+                    <button onclick="filterProjects('web')"
+                        class="filter-btn px-3 py-1.5 rounded-xl text-slate-300 hover:text-cyan-400 transition-all">
+                        Full-Stack Web
+                    </button>
+                    <button onclick="filterProjects('java')"
+                        class="filter-btn px-3 py-1.5 rounded-xl text-slate-300 hover:text-cyan-400 transition-all">
+                        Java & Desktop
+                    </button>
+                    <button onclick="filterProjects('python')"
+                        class="filter-btn px-3 py-1.5 rounded-xl text-slate-300 hover:text-cyan-400 transition-all">
+                        Python & GUI
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projects Grid (Latest Engineered Systems First) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+
+                <!-- Project 1: ICBT Ride (Carpooling Web App) -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-cyan-400/50 shadow-xl"
+                    data-category="web">
+                    <!-- Real Application Window Titlebar -->
+                    <div
+                        class="px-3.5 py-2.5 bg-slate-900/95 border-b border-white/10 flex items-center justify-between text-xs select-none">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                        </div>
+                        <div
+                            class="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-slate-950 border border-white/10 text-[10px] text-slate-400 font-mono">
+                            <i class="fas fa-lock text-[8px] text-emerald-400"></i>
+                            <span>icbtride.campus/carpooling</span>
+                        </div>
+                        <span
+                            class="text-[9px] font-mono text-cyan-400 bg-cyan-950/80 border border-cyan-400/30 px-2 py-0.5 rounded-md font-bold">Cross-Platform
+                            PWA</span>
+                    </div>
+                    <!-- Mockup Screen Preview -->
+                    <div class="h-48 w-full overflow-hidden relative bg-slate-950">
+                        <img src="photo/icbtride.webp" alt="ICBT Ride Carpooling Web App"
+                            class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>3-Member Team</span>
+                        </div>
+                    </div>
+                    <!-- Content & Stack -->
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-2">
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
+                                    ICBT Ride &bull; Carpooling
+                                </h3>
+                                <span
+                                    class="text-[10px] font-mono text-purple-300 bg-purple-950/70 border border-purple-400/30 px-2 py-0.5 rounded-md whitespace-nowrap">Collaborative</span>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Cross-platform campus carpooling PWA engineered with a 3-member team. Features
+                                interactive geospatial route matching, real-time sync, offline service worker caching,
+                                and enterprise RBAC security.
+                            </p>
+
+                            <!-- Primary Tech Pills -->
+                            <div class="flex flex-wrap gap-1.5 mb-4 text-xs font-sans">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-cyan-400/30 text-cyan-300 text-[11px]">
+                                    <i class="fab fa-microsoft text-[#00a4ef]"></i> .NET 8 Web API
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200 text-[11px]">
+                                    <i class="fas fa-fire text-[#ffca28]"></i> Firebase Firestore & Auth
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200 text-[11px]">
+                                    <i class="fas fa-map-location-dot text-emerald-400"></i> Leaflet & OSM
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200 text-[11px]">
+                                    <i class="fas fa-bolt text-amber-400"></i> onSnapshot & WebSockets
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200 text-[11px]">
+                                    <i class="fas fa-mobile-screen-button text-purple-400"></i> PWA & Cache API
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200 text-[11px]">
+                                    <i class="fab fa-docker text-[#2496ed]"></i> Docker & CI/CD
+                                </span>
+                            </div>
+
+                            <!-- Structured Technologies & Architecture Breakdown Table -->
+                            <div
+                                class="mb-5 p-3.5 rounded-xl bg-slate-950/80 border border-cyan-500/20 text-[11px] font-mono shadow-inner space-y-2">
+                                <div
+                                    class="text-[10px] font-bold text-cyan-400 tracking-wider uppercase font-sans flex items-center justify-between border-b border-white/10 pb-1.5 mb-2">
+                                    <span class="flex items-center gap-1.5"><i class="fas fa-microchip text-xs"></i>
+                                        Technologies & Architecture</span>
+                                    <span class="text-[9px] text-slate-400 font-mono">9 Core Layers</span>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Backend:</span>
+                                        <span class="text-cyan-300 font-sans text-right font-medium text-[11px]">.NET 8
+                                            Web API</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Database:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[11px]">Firebase
+                                            Firestore</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Auth:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[11px]">Firebase
+                                            Authentication</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Maps:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[10.5px]">Leaflet.js
+                                            &bull; OpenStreetMap &bull; Nominatim Geocoding</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Real-time:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[10.5px]">Firestore
+                                            onSnapshot &bull; WebSocket/Polling</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">PWA:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[10.5px]">Service Worker
+                                            &bull; Web Manifest &bull; Cache API</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">DevOps:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[10.5px]">Docker &bull;
+                                            GitHub Actions &bull; Git</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Security:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[10.5px]">RBAC &bull;
+                                            Firestore Rules &bull; JWT Tokens</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Testing:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[10.5px]">Jest &bull;
+                                            Postman &bull; TDD</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/Manidu-Deshapriya/Icbt_Ride_carpooling_web_app" target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-cyan-400 hover:text-black border border-cyan-400/30 font-mono text-xs font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fab fa-github text-sm"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: DreamFitness (Client Management & Online Coaching Portal) -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-cyan-400/50 shadow-xl"
+                    data-category="web">
+                    <!-- Real Application Window Titlebar -->
+                    <div
+                        class="px-3.5 py-2.5 bg-slate-900/95 border-b border-white/10 flex items-center justify-between text-xs select-none">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                        </div>
+                        <div
+                            class="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-slate-950 border border-white/10 text-[10px] text-slate-400 font-mono">
+                            <i class="fas fa-lock text-[8px] text-emerald-400"></i>
+                            <span>dreamfitness.portal/dashboard</span>
+                        </div>
+                        <span
+                            class="text-[9px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-400/30 px-2 py-0.5 rounded-md font-bold">Client
+                            Production</span>
+                    </div>
+                    <!-- Mockup Screen Preview -->
+                    <div class="h-48 w-full overflow-hidden relative bg-slate-950">
+                        <img src="photo/dreamfitness.webp" alt="DreamFitness Coaching & Member Portal"
+                            class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>30+ Active Members</span>
+                        </div>
+                    </div>
+                    <!-- Content & Stack -->
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-2">
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
+                                    DreamFitness Portal
+                                </h3>
+                                <span
+                                    class="text-[10px] font-mono text-emerald-400 bg-emerald-950/70 border border-emerald-400/30 px-2 py-0.5 rounded-md whitespace-nowrap">Live
+                                    Deployment</span>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Custom cross-platform web application engineered for an online fitness coach to manage
+                                coaching clients and memberships. Actively powers 30+ paying members with real-time
+                                sync, workout schedules, and diet tracking.
+                            </p>
+
+                            <!-- Primary Tech Pills -->
+                            <div class="flex flex-wrap gap-1.5 mb-4 text-xs font-sans">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-emerald-400/30 text-emerald-300 text-[11px]">
+                                    <i class="fab fa-microsoft text-[#00a4ef]"></i> .NET Web API
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200 text-[11px]">
+                                    <i class="fas fa-fire text-[#ffca28]"></i> Firebase Firestore
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200 text-[11px]">
+                                    <i class="fas fa-user-shield text-cyan-400"></i> Firebase Auth
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200 text-[11px]">
+                                    <i class="fas fa-bolt text-amber-400"></i> onSnapshot Real-time
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200 text-[11px]">
+                                    <i class="fas fa-network-wired text-purple-400"></i> WebSocket / Polling
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200 text-[11px]">
+                                    <i class="fas fa-laptop-code text-indigo-400"></i> Cross-Platform
+                                </span>
+                            </div>
+
+                            <!-- Structured Technologies & Architecture Breakdown Table -->
+                            <div
+                                class="mb-5 p-3.5 rounded-xl bg-slate-950/80 border border-emerald-500/20 text-[11px] font-mono shadow-inner space-y-2">
+                                <div
+                                    class="text-[10px] font-bold text-emerald-400 tracking-wider uppercase font-sans flex items-center justify-between border-b border-white/10 pb-1.5 mb-2">
+                                    <span class="flex items-center gap-1.5"><i class="fas fa-microchip text-xs"></i>
+                                        Technologies & Architecture</span>
+                                    <span class="text-[9px] text-slate-400 font-mono">Production Stack</span>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Backend:</span>
+                                        <span class="text-emerald-300 font-sans text-right font-medium text-[11px]">.NET
+                                            Web API</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Database:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[11px]">Firebase
+                                            Firestore</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Auth:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[11px]">Firebase
+                                            Authentication</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Real-time:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[10.5px]">Firestore
+                                            onSnapshot &bull; WebSocket / Polling</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2 border-b border-white/5 pb-1">
+                                        <span
+                                            class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Platform:</span>
+                                        <span class="text-slate-200 font-sans text-right text-[10.5px]">Cross-Platform
+                                            Web Application</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between gap-2">
+                                        <span class="text-slate-400 text-[10px] font-sans font-semibold shrink-0">Active
+                                            Scale:</span>
+                                        <span
+                                            class="text-emerald-300 font-sans text-right font-medium text-[10.5px]">30+
+                                            Live Paying Members</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full py-2.5 px-4 rounded-xl bg-slate-900/80 border border-emerald-400/30 font-mono text-xs font-semibold text-emerald-300 flex items-center justify-center gap-2 select-none shadow-sm">
+                            <i class="fas fa-shield-halved text-emerald-400 text-xs"></i>
+                            <span>Private Client System &bull; 30+ Active Members</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: EventPlus -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-cyan-400/50 shadow-xl"
+                    data-category="web">
+                    <!-- Real Application Window Titlebar -->
+                    <div
+                        class="px-3.5 py-2.5 bg-slate-900/95 border-b border-white/10 flex items-center justify-between text-xs select-none">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                        </div>
+                        <div
+                            class="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-slate-950 border border-white/10 text-[10px] text-slate-400 font-mono">
+                            <i class="fas fa-lock text-[8px] text-emerald-400"></i>
+                            <span>eventplus.campus.edu/dashboard</span>
+                        </div>
+                        <span
+                            class="text-[9px] font-mono text-purple-400 bg-purple-950/80 border border-purple-400/30 px-2 py-0.5 rounded-md font-bold">Web
+                            App</span>
+                    </div>
+                    <!-- Mockup Screen Preview -->
+                    <div class="h-48 w-full overflow-hidden relative bg-slate-950">
+                        <img src="photo/event_plus.webp" alt="EventPlus Event Management"
+                            class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Verified Repo</span>
+                        </div>
+                    </div>
+                    <!-- Content & Stack -->
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+                                EventPlus Management System
+                            </h3>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Responsive Campus Event Management System built with Blazor WebAssembly and Google
+                                Firebase. Features automated RSVP notifications, attendee records, and feedback
+                                analytics.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6 text-xs">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fab fa-microsoft text-[#512bd4]"></i> Blazor .NET
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-fire text-[#ffca28]"></i> Firebase
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fab fa-microsoft text-[#00a4ef]"></i> C#
+                                </span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/Manidu-Deshapriya/EventPlus-Event-Management-System" target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-cyan-400 hover:text-black border border-cyan-400/30 font-mono text-xs font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fab fa-github text-sm"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: City Style POS -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-cyan-400/50 shadow-xl"
+                    data-category="java">
+                    <!-- Real Desktop Application Titlebar -->
+                    <div
+                        class="px-3.5 py-2.5 bg-slate-900/95 border-b border-white/10 flex items-center justify-between text-xs select-none">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                        </div>
+                        <div
+                            class="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-slate-950 border border-white/10 text-[10px] text-slate-300 font-mono">
+                            <i class="fas fa-window-maximize text-[8px] text-cyan-400"></i>
+                            <span>CityStyle_POS.exe [Admin v1.2]</span>
+                        </div>
+                        <span
+                            class="text-[9px] font-mono text-red-400 bg-red-950/80 border border-red-400/30 px-2 py-0.5 rounded-md font-bold">Java
+                            Desktop</span>
+                    </div>
+                    <!-- Mockup Screen Preview -->
+                    <div class="h-48 w-full overflow-hidden relative bg-slate-950">
+                        <img src="photo/city_style_pos.webp" alt="City Style Footwear POS"
+                            class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Verified Repo</span>
+                        </div>
+                    </div>
+                    <!-- Content & Stack -->
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+                                City Style Footwear POS
+                            </h3>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Point of Sale desktop system engineered for footwear retail operations, inventory
+                                tracking, supplier management, and automated sales invoicing.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6 text-xs">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fab fa-java text-[#f89820]"></i> Java
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-database text-[#00758f]"></i> MySQL
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-desktop text-cyan-400"></i> Swing GUI
+                                </span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/Manidu-Deshapriya/City-Style-Footware-POS-system" target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-cyan-400 hover:text-black border border-cyan-400/30 font-mono text-xs font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fab fa-github text-sm"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Apex Enrollment -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-cyan-400/50 shadow-xl"
+                    data-category="java">
+                    <!-- Real Desktop Application Titlebar -->
+                    <div
+                        class="px-3.5 py-2.5 bg-slate-900/95 border-b border-white/10 flex items-center justify-between text-xs select-none">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                        </div>
+                        <div
+                            class="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-slate-950 border border-white/10 text-[10px] text-slate-300 font-mono">
+                            <i class="fas fa-window-maximize text-[8px] text-teal-400"></i>
+                            <span>ApexEnrollment.jar [Student Registry]</span>
+                        </div>
+                        <span
+                            class="text-[9px] font-mono text-teal-400 bg-teal-950/80 border border-teal-400/30 px-2 py-0.5 rounded-md font-bold">Data
+                            Structures</span>
+                    </div>
+                    <!-- Mockup Screen Preview -->
+                    <div class="h-48 w-full overflow-hidden relative bg-slate-950">
+                        <img src="photo/apex_enrollment.webp" alt="Apex Institute Enrollment"
+                            class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Verified Repo</span>
+                        </div>
+                    </div>
+                    <!-- Content & Stack -->
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+                                Apex Enrollment System
+                            </h3>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Java Swing application implementing a custom Doubly Linked List for student records,
+                                enrollment processing, search optimization, and academic grade recording.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6 text-xs">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fab fa-java text-[#f89820]"></i> Java
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-diagram-project text-teal-400"></i> Linked Lists
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-desktop text-cyan-400"></i> Swing GUI
+                                </span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/Manidu-Deshapriya/Apex-institute---Enrollment-system-for-institute"
+                            target="_blank" rel="noopener noreferrer"
+                            class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-cyan-400 hover:text-black border border-cyan-400/30 font-mono text-xs font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fab fa-github text-sm"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Sri Dish Ordering -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-cyan-400/50 shadow-xl"
+                    data-category="web">
+                    <!-- Real Application Window Titlebar -->
+                    <div
+                        class="px-3.5 py-2.5 bg-slate-900/95 border-b border-white/10 flex items-center justify-between text-xs select-none">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                        </div>
+                        <div
+                            class="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-slate-950 border border-white/10 text-[10px] text-slate-400 font-mono">
+                            <i class="fas fa-lock text-[8px] text-emerald-400"></i>
+                            <span>sridish-ordering.local/menu</span>
+                        </div>
+                        <span
+                            class="text-[9px] font-mono text-indigo-400 bg-indigo-950/80 border border-indigo-400/30 px-2 py-0.5 rounded-md font-bold">E-Commerce</span>
+                    </div>
+                    <!-- Mockup Screen Preview -->
+                    <div class="h-48 w-full overflow-hidden relative bg-slate-950">
+                        <img src="photo/sri_dish.webp" alt="Sri Dish Food Ordering"
+                            class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Verified Repo</span>
+                        </div>
+                    </div>
+                    <!-- Content & Stack -->
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+                                Sri Dish Food Ordering
+                            </h3>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Full-stack food ordering platform connecting customers to local kitchens. Features cart
+                                management, menu browsing, order dispatching, and relational database storage.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6 text-xs">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fab fa-php text-[#777bb4]"></i> PHP
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-database text-[#00758f]"></i> MySQL
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fab fa-js text-[#f7df1e]"></i> JavaScript
+                                </span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/Manidu-Deshapriya/Sri-dish-Webapp-Food-ordering-system-"
+                            target="_blank" rel="noopener noreferrer"
+                            class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-cyan-400 hover:text-black border border-cyan-400/30 font-mono text-xs font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fab fa-github text-sm"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Mondy Cinema -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-cyan-400/50 shadow-xl"
+                    data-category="web">
+                    <!-- Real Application Window Titlebar -->
+                    <div
+                        class="px-3.5 py-2.5 bg-slate-900/95 border-b border-white/10 flex items-center justify-between text-xs select-none">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                        </div>
+                        <div
+                            class="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-slate-950 border border-white/10 text-[10px] text-slate-400 font-mono">
+                            <i class="fas fa-lock text-[8px] text-emerald-400"></i>
+                            <span>mondycinema.lk/tickets</span>
+                        </div>
+                        <span
+                            class="text-[9px] font-mono text-sky-400 bg-sky-950/80 border border-sky-400/30 px-2 py-0.5 rounded-md font-bold">Booking
+                            Web</span>
+                    </div>
+                    <!-- Mockup Screen Preview -->
+                    <div class="h-48 w-full overflow-hidden relative bg-slate-950">
+                        <img src="photo/mondy_cinema.webp" alt="Mondy Cinema Booking"
+                            class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Verified Repo</span>
+                        </div>
+                    </div>
+                    <!-- Content & Stack -->
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+                                Mondy Cinema Platform
+                            </h3>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Interactive cinema ticket booking web app with movie schedule displays, seat
+                                reservations, customer booking history, and an administrative control panel.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6 text-xs">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fab fa-php text-[#777bb4]"></i> PHP
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-database text-[#00758f]"></i> MySQL
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fab fa-css3-alt text-[#1572b6]"></i> CSS3
+                                </span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/Manidu-Deshapriya/Mondy-Cinema-movie-ticket-booking-system"
+                            target="_blank" rel="noopener noreferrer"
+                            class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-cyan-400 hover:text-black border border-cyan-400/30 font-mono text-xs font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fab fa-github text-sm"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6: Academy Management -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-cyan-400/50 shadow-xl"
+                    data-category="java">
+                    <!-- Real Desktop Application Titlebar -->
+                    <div
+                        class="px-3.5 py-2.5 bg-slate-900/95 border-b border-white/10 flex items-center justify-between text-xs select-none">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                        </div>
+                        <div
+                            class="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-slate-950 border border-white/10 text-[10px] text-slate-300 font-mono">
+                            <i class="fas fa-terminal text-[8px] text-emerald-400"></i>
+                            <span>ChessAcademy.jar [Tournament CLI]</span>
+                        </div>
+                        <span
+                            class="text-[9px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-400/30 px-2 py-0.5 rounded-md font-bold">Algorithms</span>
+                    </div>
+                    <!-- Mockup Screen Preview -->
+                    <div class="h-48 w-full overflow-hidden relative bg-slate-950">
+                        <img src="photo/academy_management.webp" alt="Chess Academy Management"
+                            class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Verified Repo</span>
+                        </div>
+                    </div>
+                    <!-- Content & Stack -->
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+                                Chess Academy Management
+                            </h3>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Java management system engineered to organize chess academy students, record match
+                                ratings, schedule tournaments, and compute ranking leaders.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6 text-xs">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fab fa-java text-[#f89820]"></i> Java
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-network-wired text-emerald-400"></i> Algorithms
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-file-code text-cyan-400"></i> File I/O
+                                </span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/Manidu-Deshapriya/Chess-Academy-management-system-" target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-cyan-400 hover:text-black border border-cyan-400/30 font-mono text-xs font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fab fa-github text-sm"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 7: Digital Banking GUI -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-cyan-400/50 shadow-xl"
+                    data-category="python">
+                    <!-- Real Desktop Application Titlebar -->
+                    <div
+                        class="px-3.5 py-2.5 bg-slate-900/95 border-b border-white/10 flex items-center justify-between text-xs select-none">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                        </div>
+                        <div
+                            class="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-slate-950 border border-white/10 text-[10px] text-slate-300 font-mono">
+                            <i class="fas fa-window-maximize text-[8px] text-blue-400"></i>
+                            <span>BankSim_Tkinter.py [Banking GUI]</span>
+                        </div>
+                        <span
+                            class="text-[9px] font-mono text-blue-400 bg-blue-950/80 border border-blue-400/30 px-2 py-0.5 rounded-md font-bold">Python
+                            GUI</span>
+                    </div>
+                    <!-- Mockup Screen Preview -->
+                    <div class="h-48 w-full overflow-hidden relative bg-slate-950">
+                        <img src="photo/banking_system.webp" alt="Banking System GUI"
+                            class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Verified Repo</span>
+                        </div>
+                    </div>
+                    <!-- Content & Stack -->
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+                                Digital Banking Simulator
+                            </h3>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Interactive Python desktop application simulating modern banking transactions, balance
+                                inquiries, deposit/withdrawal validation, and user profile management.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6 text-xs">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fab fa-python text-[#3776ab]"></i> Python
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-desktop text-cyan-400"></i> Tkinter GUI
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200">
+                                    <i class="fas fa-cubes text-blue-400"></i> OOP Architecture
+                                </span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/Manidu-Deshapriya/Banking-System" target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-cyan-400 hover:text-black border border-cyan-400/30 font-mono text-xs font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fab fa-github text-sm"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ======================================================== -->
+        <!-- CONTACT & INQUIRY SECTION (Clean & Modern Executive Look) -->
+        <!-- ======================================================== -->
+        <section id="contact" class="max-w-5xl mx-auto mb-20 scroll-mt-24">
+            <div
+                class="glass-card rounded-3xl p-6 sm:p-10 border border-cyan-500/20 shadow-2xl relative overflow-hidden">
+                <div
+                    class="absolute -top-24 -right-24 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                    <!-- Left Column: Contact Info & Value Proposition -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <span
+                                class="text-[11px] font-semibold text-cyan-400 tracking-wider uppercase block mb-1 font-sans">
+                                Get In Touch
+                            </span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight uppercase">
+                                Let's Build <br><span class="text-cyan-400 text-glow-cyan">Something Great</span>
+                            </h2>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mt-3 font-sans">
+                                Currently open to Software Engineer opportunities, internships, and freelance projects.
+                                Whether you have an engineering role to fill or an application to build, feel free to
+                                reach out!
+                            </p>
+                        </div>
+
+                        <!-- Direct Email Card -->
+                        <div
+                            class="p-4.5 rounded-2xl bg-slate-900/90 border border-slate-700/70 space-y-3 font-sans shadow-lg">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-400/30 flex items-center justify-center text-cyan-400">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <span
+                                        class="text-[10px] text-slate-400 uppercase tracking-wider block font-semibold">Direct
+                                        Email</span>
+                                    <a href="mailto:maniduchathuranga@gmail.com"
+                                        class="text-xs sm:text-sm font-bold text-white hover:text-cyan-400 transition-colors truncate block">
+                                        maniduchathuranga@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
+                                <button onclick="copyEmail()" id="copyBtn"
+                                    class="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700/60 text-xs text-slate-200 hover:text-white transition-all flex items-center justify-center gap-1.5 font-sans cursor-pointer">
+                                    <i class="fas fa-copy text-cyan-400 text-xs"></i>
+                                    <span id="copyText">Copy Email</span>
+                                </button>
+                                <a href="mailto:maniduchathuranga@gmail.com"
+                                    class="flex-1 py-2.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-400 hover:text-black border border-cyan-400/40 text-xs font-bold text-cyan-300 transition-all flex items-center justify-center gap-1.5 font-sans cursor-pointer shadow-sm">
+                                    <i class="fas fa-paper-plane text-xs"></i>
+                                    <span>Send Mail</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Professional Profiles & Affiliation -->
+                        <div class="space-y-2.5 font-sans">
+
+                            <a href="http://www.linkedin.com/in/mcdeshapriya" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/70 border border-slate-700/60 hover:border-[#0077b5]/80 hover:bg-slate-900 text-slate-300 hover:text-white transition-all text-xs shadow-sm">
+                                <span class="flex items-center gap-2.5">
+                                    <i class="fab fa-linkedin text-[#0077b5] text-base"></i>
+                                    <span class="font-medium">linkedin.com/in/mcdeshapriya</span>
+                                </span>
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                            </a>
+                            <a href="https://github.com/Manidu-Deshapriya" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/70 border border-slate-700/60 hover:border-cyan-400/80 hover:bg-slate-900 text-slate-300 hover:text-white transition-all text-xs shadow-sm">
+                                <span class="flex items-center gap-2.5">
+                                    <i class="fab fa-github text-cyan-400 text-base"></i>
+                                    <span class="font-medium">github.com/Manidu-Deshapriya</span>
+                                </span>
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Clean Form -->
+                    <div
+                        class="lg:col-span-7 bg-slate-950/70 p-6 sm:p-8 rounded-2xl border border-slate-700/70 font-sans shadow-xl">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="text-lg font-bold text-white">Send a Direct Inquiry</h3>
+                            <span
+                                class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-400/30 text-[10px] font-mono text-cyan-400">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                                Direct Response
+                            </span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-6">Fill out the details below to discuss project
+                            opportunities, internships, or collaborations.</p>
+
+                        <form onsubmit="handleContact(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="text-xs font-semibold text-slate-200 flex items-center justify-between mb-1.5">
+                                        <span>Your Name</span>
+                                        <span class="text-[10px] text-cyan-400 font-mono font-normal">Required</span>
+                                    </label>
+                                    <input type="text" id="contactName" required
+                                        placeholder="e.g. Hiring Manager / Client"
+                                        class="w-full bg-slate-900/90 border border-slate-700/80 hover:border-slate-500 focus:border-cyan-400 focus:bg-slate-900 focus:ring-2 focus:ring-cyan-400/20 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-400/80 transition-all outline-none">
+                                </div>
+                                <div>
+                                    <label
+                                        class="text-xs font-semibold text-slate-200 flex items-center justify-between mb-1.5">
+                                        <span>Your Email</span>
+                                        <span class="text-[10px] text-cyan-400 font-mono font-normal">Required</span>
+                                    </label>
+                                    <input type="email" id="contactEmail" required placeholder="name@company.com"
+                                        class="w-full bg-slate-900/90 border border-slate-700/80 hover:border-slate-500 focus:border-cyan-400 focus:bg-slate-900 focus:ring-2 focus:ring-cyan-400/20 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-400/80 transition-all outline-none">
+                                </div>
+                            </div>
+                            <div>
+                                <label
+                                    class="text-xs font-semibold text-slate-200 flex items-center justify-between mb-1.5">
+                                    <span>Message / Project Inquiry</span>
+                                    <span class="text-[10px] text-cyan-400 font-mono font-normal">Required</span>
+                                </label>
+                                <textarea id="contactMsg" rows="4" required
+                                    placeholder="Brief description of the opportunity, project scope, or technical role..."
+                                    class="w-full bg-slate-900/90 border border-slate-700/80 hover:border-slate-500 focus:border-cyan-400 focus:bg-slate-900 focus:ring-2 focus:ring-cyan-400/20 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-400/80 transition-all resize-none outline-none"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 hover:from-cyan-300 hover:to-sky-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,242,255,0.25)] hover:shadow-[0_0_25px_rgba(0,242,255,0.4)] flex items-center justify-center gap-2 cursor-pointer">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ======================================================== -->
+    <!-- FOOTER WITH SOCIALS & REPUTATION BADGES                   -->
+    <!-- ======================================================== -->
+    <footer class="relative z-20 w-full px-4 sm:px-8 py-8 border-t border-white/10 font-sans text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+
+            <div class="flex items-center gap-3">
+                <span class="text-white font-bold">&copy; <span id="currentYear"></span> MANIDU DESHAPRIYA</span>
+                <span class="text-slate-600">&bull;</span>
+                <span class="text-cyan-400 font-medium">CARDIFF METROPOLITAN UNIVERSITY</span>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center gap-5 text-base">
+                <a href="https://wa.me/94750670420?text=Hello%20Manidu!%20I%20reviewed%20your%20Software%20Engineering%20portfolio."
+                    target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors"
+                    title="Chat on WhatsApp (+94 75 067 0420)">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://github.com/Manidu-Deshapriya" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-cyan-400 transition-colors" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="http://www.linkedin.com/in/mcdeshapriya" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-[#0077b5] transition-colors" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.youtube.com/@project_mcd" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-red-400 transition-colors" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="mailto:maniduchathuranga@gmail.com" class="hover:text-cyan-400 transition-colors"
+                    title="Direct Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <div class="text-slate-500 text-[11px]">
+                Built for High-Impact Software Engineering
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- ======================================================== -->
+    <!-- JAVASCRIPT: FILTERING, COPY EMAIL & SMOOTH INTERACTIONS   -->
+    <!-- ======================================================== -->
+    <script>
+        // Dynamic current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Project Category Filter Logic
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('#projects-grid .project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-cyan-400', 'text-slate-950', 'font-bold');
+                btn.classList.add('text-slate-300');
+            });
+
+            event.target.classList.add('bg-cyan-400', 'text-slate-950', 'font-bold');
+            event.target.classList.remove('text-slate-300');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Copy Email function
+        function copyEmail() {
+            navigator.clipboard.writeText('maniduchathuranga@gmail.com').then(() => {
+                const copyText = document.getElementById('copyText');
+                copyText.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyText.textContent = 'Copy Email';
+                }, 2000);
+            });
+        }
+
+        // Contact Form to Mailto
+        function handleContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const msg = document.getElementById('contactMsg').value;
+
+            const mailtoUrl = `mailto:maniduchathuranga@gmail.com?subject=Software Engineering Inquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + msg)}`;
+            window.location.href = mailtoUrl;
+        }
+    </script>
+</body>
+
+</html>

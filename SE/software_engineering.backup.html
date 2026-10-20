@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer | Manidu Deshapriya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-black: #0B1120;
+            --accent-primary: #00f2ff;
+            --accent-secondary: #7000ff;
+            --glass-white: rgba(255, 255, 255, 0.05);
+            --border-glow: rgba(0, 242, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-primary) transparent;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Technical Background */
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+        }
+
+        .dot-overlay {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, #0B1120 90%);
+            z-index: -1;
+        }
+
+        /* Scanning Line Animation */
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent-primary), transparent);
+            opacity: 0.1;
+            z-index: 100;
+            pointer-events: none;
+            animation: scan 8s linear infinite;
+        }
+
+        @keyframes scan {
+            0% {
+                top: 0;
+            }
+
+            100% {
+                top: 100%;
+            }
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 95%;
+            max-width: 1200px;
+        }
+
+        .nav-container {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.8rem 2rem;
+            border-radius: 99px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            /* Corrected slate-400 equivalent */
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-left: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+            text-shadow: 0 0 10px var(--accent-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .hero-label {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-primary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            background: rgba(0, 242, 255, 0.05);
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-primary);
+        }
+
+        h1 {
+            font-size: 6rem;
+            font-weight: 800;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            letter-spacing: -3px;
+        }
+
+        .glitch-text {
+            background: linear-gradient(to bottom, #fff, #444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 1.2rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* Tech Section */
+        .tech-grid {
+            margin-top: 5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .tech-box {
+            background: var(--glass-white);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.2rem 0.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tech-box:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+            background: rgba(0, 242, 255, 0.02);
+        }
+
+        .tech-box i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-primary);
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.05);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(0, 242, 255, 0.1), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Terminal Style Contact */
+        .terminal {
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            font-family: 'JetBrains Mono', monospace;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+        }
+
+        .terminal-header {
+            background: #1a1a1a;
+            padding: 0.8rem 1rem;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .red {
+            background: #ff5f56;
+        }
+
+        .yellow {
+            background: #ffbd2e;
+        }
+
+        .green {
+            background: #27c93f;
+        }
+
+        .terminal-body {
+            padding: 2rem;
+            color: var(--accent-primary);
+        }
+
+        /* Responsive */
+        /* Responsive Overhaul */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                overflow-y: auto;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+                line-height: 1.1;
+                letter-spacing: -1px;
+            }
+
+            .hero {
+                padding-top: 8rem;
+                height: auto;
+                min-height: 80vh;
+            }
+
+            .nav-container {
+                padding: 0.6rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                /* Hide standard links to clean up mobile */
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin-top: 3rem;
+            }
+
+            .tech-box {
+                padding: 1rem 0.2rem;
+            }
+
+            .tech-box i {
+                font-size: 1.2rem;
+            }
+
+            .tech-box p {
+                font-size: 10px !important;
+            }
+
+            .project-card {
+                padding: 1.5rem !important;
+            }
+
+            .terminal-body {
+                padding: 1rem;
+            }
+
+            .terminal-body form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+        }
+
+        /* Mission Section */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-bg"></div>
+    <div class="dot-overlay"></div>
+    <div class="scanline"></div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="code-logo">MANIDU.DEV</div>
+            <div class="nav-links">
+                <a href="../Manidu Deshapriya.html">Home</a>
+                <a href="#mission">Protocol</a>
+                <a href="#projects">Nodes</a>
+                <a href="#contact">Terminal</a>
+            </div>
+            <a href="mailto:maniduchathuranga112@gmail.com"
+                class="text-[10px] font-bold border border-cyan-500/30 px-4 md:px-6 py-2 rounded-full hover:bg-cyan-500 hover:text-black transition uppercase">Connect</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-label">SOFTWARE_ENGINEER_V2.0</div>
+            <h1>
+                <span class="glitch-text">ENGINEERING</span><br>
+                <span class="text-cyan-400">DIGITAL SOLUTIONS</span>
+            </h1>
+            <p>
+                Final-year Software Engineering undergraduate at Cardiff Metropolitan University (ICBT). Developing robust web applications, scalable databases, and practical digital solutions.
+            </p>
+
+            <!-- Tech Stack Showcase -->
+            <div class="tech-grid" id="tech">
+                <div class="tech-box group">
+                    <i class="fab fa-java group-hover:text-red-500 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-red-400 transition-colors">
+                        Java</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fab fa-python group-hover:text-blue-400 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-blue-400 transition-colors">
+                        Python</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fab fa-php group-hover:text-indigo-400 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-indigo-400 transition-colors">
+                        PHP</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fab fa-js group-hover:text-yellow-400 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-yellow-400 transition-colors">
+                        JS</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fab fa-react group-hover:text-cyan-400 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-cyan-400 transition-colors">
+                        React</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fab fa-html5 group-hover:text-orange-500 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-orange-500 transition-colors">
+                        HTML/CSS</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fas fa-database group-hover:text-emerald-400 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-emerald-400 transition-colors">
+                        MySQL</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fas fa-fire group-hover:text-amber-500 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-amber-500 transition-colors">
+                        Firebase</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fab fa-microsoft group-hover:text-purple-400 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-purple-400 transition-colors">
+                        Blazor</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fab fa-docker group-hover:text-cyan-500 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-cyan-500 transition-colors">
+                        Docker</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fab fa-aws group-hover:text-orange-400 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-orange-400 transition-colors">
+                        AWS</p>
+                </div>
+                <div class="tech-box group">
+                    <i class="fab fa-git-alt group-hover:text-red-500 transition-colors"></i>
+                    <p
+                        class="text-[10px] font-bold text-slate-500 uppercase mt-2 group-hover:text-red-500 transition-colors">
+                        Git</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission / About Section -->
+        <section id="mission" class="container mx-auto py-32 px-4">
+            <div class="mission-grid glass-card p-8 md:p-16 border-l-4 border-l-cyan-500">
+                <div class="relative">
+                    <div class="text-[10px] font-mono text-cyan-500 mb-4 tracking-[5px]">MISSION_PROTOCOL</div>
+                    <h2 class="text-4xl font-extrabold mb-6">WHO IS <br>MANIDU DESHAPRIYA?</h2>
+                    <div class="h-2 w-20 bg-cyan-500 mb-8"></div>
+                </div>
+                <div>
+                    <p class="text-slate-400 leading-relaxed mb-6 text-lg">
+                        I am a <span class="text-white font-bold">Software Engineer</span> and final-year undergraduate at Cardiff Metropolitan University (studying at ICBT Campus in Sri Lanka), dedicated to creating practical digital solutions that solve real-world problems.
+                    </p>
+                    <p class="text-slate-500 leading-relaxed">
+                        With hands-on experience in .NET, Java, JavaScript, PHP, Firebase, and PostgreSQL, I specialize in web applications, database management, and API integrations. Combined with over 5 years of global freelance experience developing web applications, websites, software tools, and digital media, I bring both engineering discipline and creative problem-solving to every system.
+                    </p>
+                    <div class="mt-8 flex gap-4 justify-center md:justify-start">
+                        <div class="text-center">
+                            <span class="block text-2xl font-bold text-white">5+</span>
+                            <span class="text-[10px] text-slate-500 uppercase">Engineered Systems</span>
+                        </div>
+                        <div class="w-[1px] h-10 bg-white/10"></div>
+                        <div class="text-center">
+                            <span class="block text-2xl font-bold text-white">99.9%</span>
+                            <span class="text-[10px] text-slate-500 uppercase">Uptime Focus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Node Projects Section -->
+        <section id="projects" class="container mx-auto py-24 px-4">
+            <div class="flex items-center gap-4 mb-20">
+                <div class="h-[1px] flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+                <h2 class="text-3xl font-black text-white italic tracking-tighter uppercase">Project_Nodes</h2>
+                <div class="h-[1px] w-20 bg-cyan-500/50"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card flex flex-col group relative overflow-hidden"
+                    onclick="window.open('https://github.com/Manidu-Deshapriya/City-Style-Footware-POS-system', '_blank')"
+                    style="cursor: pointer;">
+                    <div class="h-48 w-full overflow-hidden border-b border-white/10 relative">
+                        <img src="photo/city_style_pos.webp" alt="City Style Footware POS"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col relative z-20">
+                        <span class="text-[10px] font-mono text-cyan-500 mb-3 block">01 // JAVA_DESKTOP_APP</span>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">City Style
+                            Footware POS</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed flex-1 text-sm line-clamp-3">
+                            A high-fidelity Point of Sale system tailored for footwear inventory and retail management.
+                        </p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-red-500/50 text-red-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(248,113,113,0.15)]">Java</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card flex flex-col group relative overflow-hidden"
+                    onclick="window.open('https://github.com/Manidu-Deshapriya/EventPlus-Event-Management-System', '_blank')"
+                    style="cursor: pointer;">
+                    <div class="h-48 w-full overflow-hidden border-b border-white/10 relative">
+                        <img src="photo/event_plus.webp" alt="EventPlus Event Management"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col relative z-20">
+                        <span class="text-[10px] font-mono text-cyan-500 mb-3 block">02 // CROSS_PLATFORM_WEB</span>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">EventPlus System
+                        </h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed flex-1 text-sm line-clamp-3">
+                            A highly-responsive Campus Event Management System built with Blazor WebAssembly and Google
+                            Firebase. Features automated RSVP emails and feedback tools.
+                        </p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-purple-500/50 text-purple-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(168,85,247,0.15)]">Blazor</span>
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-amber-500/50 text-amber-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(245,158,11,0.15)]">Firebase</span>
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-orange-500/50 text-orange-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(249,115,22,0.15)]">HTML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card flex flex-col group relative overflow-hidden"
+                    onclick="window.open('https://github.com/Manidu-Deshapriya/Apex-institute---Enrollment-system-for-institute', '_blank')"
+                    style="cursor: pointer;">
+                    <div class="h-48 w-full overflow-hidden border-b border-white/10 relative">
+                        <img src="photo/apex_enrollment.webp" alt="Apex Institute Enrollment"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col relative z-20">
+                        <span class="text-[10px] font-mono text-cyan-500 mb-3 block">03 // JAVA_SWING_APP</span>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Apex Enrollment
+                        </h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed flex-1 text-sm line-clamp-3">
+                            A professional Java Swing desktop application designed to manage student enrollment records
+                            efficiently using a custom-implemented Doubly Linked List.
+                        </p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-red-500/50 text-red-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(248,113,113,0.15)]">Java</span>
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-teal-500/50 text-teal-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(20,184,166,0.15)]">Swing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card flex flex-col group relative overflow-hidden"
+                    onclick="window.open('https://github.com/Manidu-Deshapriya/Sri-dish-Webapp-Food-ordering-system-', '_blank')"
+                    style="cursor: pointer;">
+                    <div class="h-48 w-full overflow-hidden border-b border-white/10 relative">
+                        <img src="photo/sri_dish.webp" alt="Sri Dish Food Ordering"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col relative z-20">
+                        <span class="text-[10px] font-mono text-cyan-500 mb-3 block">05 // E_COMMERCE_WEB</span>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Sri Dish Ordering
+                        </h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed flex-1 text-sm line-clamp-3">
+                            An end-to-end food ordering system. Connects customers with local restaurants and includes
+                            core functionalities like cart and secure checkout.
+                        </p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-indigo-400/50 text-indigo-300 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(129,140,248,0.15)]">PHP</span>
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-cyan-500/50 text-cyan-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(6,182,212,0.15)]">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card flex flex-col group relative overflow-hidden"
+                    onclick="window.open('https://github.com/Manidu-Deshapriya/Mondy-Cinema-movie-ticket-booking-system', '_blank')"
+                    style="cursor: pointer;">
+                    <div class="h-48 w-full overflow-hidden border-b border-white/10 relative">
+                        <img src="photo/mondy_cinema.webp" alt="Mondy Cinema Booking"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col relative z-20">
+                        <span class="text-[10px] font-mono text-cyan-500 mb-3 block">06 // BOOKING_SYSTEM</span>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Mondy Cinema</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed flex-1 text-sm line-clamp-3">
+                            A modern online platform for movie ticket booking. Provides a convenient way for customers
+                            to purchase tickets and admins to manage the cinema.
+                        </p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-indigo-400/50 text-indigo-300 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(129,140,248,0.15)]">PHP</span>
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-cyan-500/50 text-cyan-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(6,182,212,0.15)]">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card flex flex-col group relative overflow-hidden"
+                    onclick="window.open('https://github.com/Manidu-Deshapriya/Chess-Academy-management-system-', '_blank')"
+                    style="cursor: pointer;">
+                    <div class="h-48 w-full overflow-hidden border-b border-white/10 relative">
+                        <img src="photo/academy_management.webp" alt="Academy Management System"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col relative z-20">
+                        <span class="text-[10px] font-mono text-cyan-500 mb-3 block">07 // CONSOLE_SYSTEM</span>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Academy
+                            Management</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed flex-1 text-sm line-clamp-3">
+                            The Chess Club Management System is a Java-based console application designed to efficiently
+                            manage player registrations and tournament schedules.
+                        </p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-red-500/50 text-red-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(248,113,113,0.15)]">Java</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card flex flex-col group relative overflow-hidden"
+                    onclick="window.open('https://github.com/Manidu-Deshapriya/Banking-System', '_blank')"
+                    style="cursor: pointer;">
+                    <div class="h-48 w-full overflow-hidden border-b border-white/10 relative">
+                        <img src="photo/banking_system.webp" alt="Banking System GUI"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col relative z-20">
+                        <span class="text-[10px] font-mono text-cyan-500 mb-3 block">08 // PYTHON_GUI_APP</span>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Digital Banking
+                            GUI</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed flex-1 text-sm line-clamp-3">
+                            A streamlined Python program simulating a basic digital banking environment with an
+                            intuitive Graphical User Interface.
+                        </p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-blue-500/50 text-blue-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(59,130,246,0.15)]">Python</span>
+                            <span
+                                class="text-[11px] px-4 py-1.5 bg-slate-800/80 rounded-full border border-emerald-500/50 text-emerald-400 uppercase font-bold tracking-wider shadow-[0_0_10px_rgba(16,185,129,0.15)]">GUI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container mx-auto py-32 px-4 max-w-4xl">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                    <div class="ml-4 text-[10px] uppercase tracking-widest opacity-50 font-bold">bash — manidu@localhost
+                    </div>
+                </div>
+                <div class="terminal-body font-mono">
+                    <p class="mb-4 text-xs"><span class="text-green-500">➜</span> <span class="text-white">~</span>
+                        contact --init</p>
+                    <p class="text-slate-500 mb-8 text-xs">Ready for transmission. Enter credentials.</p>
+
+                    <form class="space-y-6">
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="flex-1">
+                                <p class="text-[10px] mb-2 text-cyan-500 uppercase">Identity:</p>
+                                <input type="text"
+                                    class="w-full bg-black/50 border border-white/10 p-4 rounded text-white text-sm outline-none focus:border-cyan-500 transition">
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-[10px] mb-2 text-cyan-500 uppercase">Frequency (Email):</p>
+                                <input type="email"
+                                    class="w-full bg-black/50 border border-white/10 p-4 rounded text-white text-sm outline-none focus:border-cyan-500 transition">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[10px] mb-2 text-cyan-500 uppercase">Packet_Data (Message):</p>
+                            <textarea
+                                class="w-full bg-black/50 border border-white/10 p-4 rounded text-white text-sm outline-none focus:border-cyan-500 transition min-h-[150px]"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-cyan-500 text-black px-8 py-4 font-bold rounded uppercase hover:bg-white transition flex items-center justify-center gap-2 text-xs">
+                            Broadcast Message // <i class="fas fa-terminal"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-20 text-center border-t border-white/5">
+        <div class="flex justify-center gap-8 mb-8">
+            <a href="https://github.com/Manidu-Deshapriya" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-cyan-500 transition" title="GitHub"><i class="fab fa-github text-2xl"></i></a>
+            <a href="http://www.linkedin.com/in/mcdeshapriya" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-[#0077b5] transition" title="LinkedIn"><i class="fab fa-linkedin-in text-2xl"></i></a>
+            <a href="https://www.youtube.com/@project_mcd" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-red-500 transition" title="YouTube"><i class="fab fa-youtube text-2xl"></i></a>
+            <a href="mailto:maniduchathuranga112@gmail.com" class="text-slate-500 hover:text-cyan-500 transition" title="Email"><i class="fas fa-envelope text-2xl"></i></a>
+        </div>
+        <p class="text-[9px] font-mono text-slate-700 tracking-[10px] uppercase">End of Transmission // 2026</p>
+    </footer>
+
+    <script>
+        // Reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
