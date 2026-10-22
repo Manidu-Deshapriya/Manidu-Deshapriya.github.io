@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a17" />
+      <stop offset="50%" stop-color="#0a1024" />
+      <stop offset="100%" stop-color="#140728" />
+    </linearGradient>
+
+    <!-- Border Ring Gradient (Cyan to Purple) -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2ff" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+
+    <!-- Letter M Vibrant Gradient -->
+    <linearGradient id="mGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2ff" />
+      <stop offset="45%" stop-color="#38bdf8" />
+      <stop offset="85%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#e879f9" />
+    </linearGradient>
+
+    <!-- Subtle Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00f2ff" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Dark Rounded Container -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Gradient Border -->
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none" stroke="url(#borderGrad)" stroke-width="2.5" opacity="0.9" />
+
+  <!-- Artistic Modern 'M' Monogram with Chamfered Corners -->
+  <path d="M 14,48 L 14,16 L 23,16 L 32,32 L 41,16 L 50,16 L 50,48 L 42.5,48 L 42.5,27.5 L 34.5,40.5 L 29.5,40.5 L 21.5,27.5 L 21.5,48 Z"
+        fill="url(#mGrad)"
+        filter="url(#glow)" />
+
+  <!-- Center Vertex Accent Point -->
+  <circle cx="32" cy="32" r="2" fill="#ffffff" opacity="0.9" />
+</svg>
