@@ -690,10 +690,10 @@
 
                 <!-- Video 1: DFCC Bank RataViru (16:9 Landscape) -->
                 <div class="lg:col-span-6 video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    onclick="toggleVideoSound(this)">
+                    onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-video bg-black relative overflow-hidden">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Video advertisement/Dfcc Bank Rataviru.mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -714,10 +714,10 @@
 
                 <!-- Video 2: DFCC Social Updated (9:16 Vertical) -->
                 <div class="lg:col-span-3 video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    onclick="toggleVideoSound(this)">
+                    onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-[9/16] bg-black relative overflow-hidden max-h-[460px]">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Video advertisement/Dfcc Social Updated Final.mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -735,10 +735,10 @@
 
                 <!-- Video 3: Loku Business (9:16 Vertical) -->
                 <div class="lg:col-span-3 video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    onclick="toggleVideoSound(this)">
+                    onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-[9/16] bg-black relative overflow-hidden max-h-[460px]">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Video advertisement/Loku Business.mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -756,10 +756,10 @@
 
                 <!-- Video 4: Fiverr Promotion (16:9 Landscape Full Width) -->
                 <div class="lg:col-span-12 video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    onclick="toggleVideoSound(this)">
+                    onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-[21/9] sm:aspect-video md:aspect-[21/9] max-h-[360px] bg-black relative overflow-hidden">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Video advertisement/Fiverr.mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -822,10 +822,10 @@
 
                 <!-- AI Video 1: CR Engineers -->
                 <div class="creative-video-item video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    data-type="ai" onclick="toggleVideoSound(this)">
+                    data-type="ai" onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-video bg-black relative overflow-hidden">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Ai Ads/Cr Engineers.mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -844,10 +844,10 @@
 
                 <!-- AI Video 2: Job Land (Vertical 9:16) -->
                 <div class="creative-video-item video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    data-type="ai" onclick="toggleVideoSound(this)">
+                    data-type="ai" onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-[9/16] bg-black relative overflow-hidden max-h-[380px]">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Ai Ads/Job Land- Ads.mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -866,10 +866,10 @@
 
                 <!-- AI Video 3: Sri Dish Demo -->
                 <div class="creative-video-item video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    data-type="ai" onclick="toggleVideoSound(this)">
+                    data-type="ai" onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-video bg-black relative overflow-hidden">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Ai Ads/Sri Dish Demo 121212.mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -888,10 +888,10 @@
 
                 <!-- Promo Video 1: DrawX Official Final -->
                 <div class="creative-video-item video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    data-type="promo" onclick="toggleVideoSound(this)">
+                    data-type="promo" onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-video bg-black relative overflow-hidden">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Promo/Drawx Offcial Final.mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -910,10 +910,10 @@
 
                 <!-- Promo Video 2: Drone Final -->
                 <div class="creative-video-item video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    data-type="promo" onclick="toggleVideoSound(this)">
+                    data-type="promo" onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-video bg-black relative overflow-hidden">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Promo/Drone Final.mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -932,10 +932,10 @@
 
                 <!-- Promo Video 3: IdeaMart Event 2025 -->
                 <div class="creative-video-item video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    data-type="promo" onclick="toggleVideoSound(this)">
+                    data-type="promo" onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-video bg-black relative overflow-hidden">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Promo/Idea Mart Even 2025.mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -954,10 +954,10 @@
 
                 <!-- Promo Video 4: Kinetic Typography Ads -->
                 <div class="creative-video-item video-card glass-panel rounded-2xl overflow-hidden border border-purple-500/20 group"
-                    data-type="promo" onclick="toggleVideoSound(this)">
+                    data-type="promo" onclick="if (event.target.closest('video')) return; toggleVideoSound(this)">
                     <div class="sound-badge"><i class="fas fa-volume-xmark text-pink-400"></i> CLICK FOR SOUND</div>
                     <div class="aspect-video bg-black relative overflow-hidden">
-                        <video loop playsinline muted class="w-full h-full object-cover">
+                        <video controls preload="metadata" loop playsinline muted class="w-full h-full object-cover">
                             <source src="Promo/Kinetic Typography Ads(Fiverr).mp4?v=1.0" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -1497,7 +1497,7 @@
                 });
 
                 video.muted = false;
-                video.play().catch(() => {});
+                video.play().catch((error) => { console.debug('Video autoplay was blocked or the source could not load:', error); });
                 badge.innerHTML = '<i class="fas fa-volume-high text-emerald-400"></i> SOUND ACTIVE';
                 badge.style.borderColor = 'rgba(52, 211, 153, 0.6)';
             } else {
@@ -1513,7 +1513,7 @@
                 const video = entry.target.querySelector('video');
                 if (video) {
                     if (entry.isIntersecting) {
-                        video.play().catch(() => {});
+                        video.play().catch((error) => { console.debug('Video autoplay was blocked or the source could not load:', error); });
                     } else {
                         video.pause();
                         video.muted = true;
